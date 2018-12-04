@@ -12,8 +12,8 @@
 		84C54E4F21B6C7F9009D482B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C54E4D21B6C7F9009D482B /* Main.storyboard */; };
 		84C54E5121B6C7FE009D482B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84C54E5021B6C7FE009D482B /* Assets.xcassets */; };
 		84C54E5421B6C7FE009D482B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C54E5221B6C7FE009D482B /* LaunchScreen.storyboard */; };
-		84C54E5F21B6C7FE009D482B /* InstagridTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C54E5E21B6C7FE009D482B /* InstagridTests.swift */; };
-		84C54E6A21B6C7FE009D482B /* InstagridUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C54E6921B6C7FE009D482B /* InstagridUITests.swift */; };
+		84C54E7821B6E2C1009D482B /* Delm-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 84C54E7721B6E2C1009D482B /* Delm-Medium.otf */; };
+		84C54E7A21B6E2CD009D482B /* ThirstySoftRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 84C54E7921B6E2CD009D482B /* ThirstySoftRegular.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,11 +42,9 @@
 		84C54E5321B6C7FE009D482B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84C54E5521B6C7FE009D482B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84C54E5A21B6C7FE009D482B /* InstagridTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstagridTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		84C54E5E21B6C7FE009D482B /* InstagridTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagridTests.swift; sourceTree = "<group>"; };
-		84C54E6021B6C7FE009D482B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84C54E6521B6C7FE009D482B /* InstagridUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstagridUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		84C54E6921B6C7FE009D482B /* InstagridUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagridUITests.swift; sourceTree = "<group>"; };
-		84C54E6B21B6C7FE009D482B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84C54E7721B6E2C1009D482B /* Delm-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Delm-Medium.otf"; path = "../../Assets/Font/Delm-Medium.otf"; sourceTree = "<group>"; };
+		84C54E7921B6E2CD009D482B /* ThirstySoftRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = ThirstySoftRegular.otf; path = ../../Assets/Font/ThirstySoftRegular.otf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,9 +75,10 @@
 		84C54E3D21B6C7F9009D482B = {
 			isa = PBXGroup;
 			children = (
-				84C54E4821B6C7F9009D482B /* Instagrid */,
-				84C54E5D21B6C7FE009D482B /* InstagridTests */,
-				84C54E6821B6C7FE009D482B /* InstagridUITests */,
+				84C54E7D21B6F20E009D482B /* Controller */,
+				84C54E7C21B6F20A009D482B /* View */,
+				84C54E7B21B6F203009D482B /* Model */,
+				84C54E4821B6C7F9009D482B /* Supporting Files */,
 				84C54E4721B6C7F9009D482B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -94,35 +93,40 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		84C54E4821B6C7F9009D482B /* Instagrid */ = {
+		84C54E4821B6C7F9009D482B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
 				84C54E4921B6C7F9009D482B /* AppDelegate.swift */,
-				84C54E4B21B6C7F9009D482B /* ViewController.swift */,
-				84C54E4D21B6C7F9009D482B /* Main.storyboard */,
 				84C54E5021B6C7FE009D482B /* Assets.xcassets */,
+				84C54E7721B6E2C1009D482B /* Delm-Medium.otf */,
+				84C54E7921B6E2CD009D482B /* ThirstySoftRegular.otf */,
 				84C54E5221B6C7FE009D482B /* LaunchScreen.storyboard */,
 				84C54E5521B6C7FE009D482B /* Info.plist */,
 			);
-			path = Instagrid;
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		84C54E5D21B6C7FE009D482B /* InstagridTests */ = {
+		84C54E7B21B6F203009D482B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				84C54E5E21B6C7FE009D482B /* InstagridTests.swift */,
-				84C54E6021B6C7FE009D482B /* Info.plist */,
 			);
-			path = InstagridTests;
+			path = Model;
 			sourceTree = "<group>";
 		};
-		84C54E6821B6C7FE009D482B /* InstagridUITests */ = {
+		84C54E7C21B6F20A009D482B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				84C54E6921B6C7FE009D482B /* InstagridUITests.swift */,
-				84C54E6B21B6C7FE009D482B /* Info.plist */,
+				84C54E4D21B6C7F9009D482B /* Main.storyboard */,
 			);
-			path = InstagridUITests;
+			path = View;
+			sourceTree = "<group>";
+		};
+		84C54E7D21B6F20E009D482B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				84C54E4B21B6C7F9009D482B /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +235,8 @@
 			files = (
 				84C54E5421B6C7FE009D482B /* LaunchScreen.storyboard in Resources */,
 				84C54E5121B6C7FE009D482B /* Assets.xcassets in Resources */,
+				84C54E7A21B6E2CD009D482B /* ThirstySoftRegular.otf in Resources */,
+				84C54E7821B6E2C1009D482B /* Delm-Medium.otf in Resources */,
 				84C54E4F21B6C7F9009D482B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,7 +271,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84C54E5F21B6C7FE009D482B /* InstagridTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,7 +278,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84C54E6A21B6C7FE009D482B /* InstagridUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
