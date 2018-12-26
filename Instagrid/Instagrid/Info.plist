@@ -46,5 +46,7 @@
 		<string>Delm-Medium</string>
 		<string>ThirstySoftRegular</string>
 	</array>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Use photos to add in InstaGrid !</string>
 </dict>
 </plist>

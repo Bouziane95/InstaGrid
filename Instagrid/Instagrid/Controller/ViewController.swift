@@ -5,10 +5,16 @@
 //  Created by admin on 04/12/2018.
 //  Copyright © 2018 Bouziane. All rights reserved.
 //
-
+import Photos
 import UIKit
 
 class ViewController: UIViewController {
+    
+    //LOGIC INITIALIZATION
+    
+    let pasteView = PasteView()
+    //let image = UIImagePickerController()
+    //var imagePicked = 0
     
     // VARIABLES DECLARATIONS
     
@@ -16,6 +22,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var layoutOneButton: UIButton!
     @IBOutlet weak var layoutTwoButton: UIButton!
     @IBOutlet weak var layoutThreeButton: UIButton!
+    
     //buttons hover declaration
     @IBOutlet weak var buttonOneHover : UIImageView!
     @IBOutlet weak var buttonTwoHover : UIImageView!
@@ -37,9 +44,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var image5: UIImageView!
     @IBOutlet weak var image6: UIImageView!
     
-    //LOGIC INITIALIZATION
-    
-    let pasteView = PasteView()
+   
     
     
     override func viewDidLoad() {
@@ -88,6 +93,220 @@ class ViewController: UIViewController {
         squareThree.isHidden = displays[4]
         squareFour.isHidden = displays[5]
     }
+    
+    
+    @IBAction func addPhotoS1(_ sender: UIButton) {
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
+            PHPhotoLibrary.requestAuthorization { (status) in
+                switch status{
+                case .authorized:
+                    let myPickerController = UIImagePickerController()
+                    myPickerController.sourceType = .photoLibrary
+                    self.present(myPickerController, animated: true)
+                default:
+                    break
+               /* case .notDetermined:
+                    <#code#>
+                case .restricted:
+                    <#code#>
+                case .denied:
+                    <#code#>*/
+                }
+            }
+        }
+    }
+    
+    @IBAction func addPhotoS2(_ sender: UIButton) {
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
+            PHPhotoLibrary.requestAuthorization { (status) in
+                switch status{
+                case .authorized:
+                    let myPickerController = UIImagePickerController()
+                    myPickerController.sourceType = .photoLibrary
+                    self.present(myPickerController, animated: true)
+                default:
+                    break
+                    /* case .notDetermined:
+                     <#code#>
+                     case .restricted:
+                     <#code#>
+                     case .denied:
+                     <#code#>*/
+                }
+            }
+        }
+    }
+    
+    @IBAction func addPhotoS3(_ sender: UIButton) {
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
+            PHPhotoLibrary.requestAuthorization { (status) in
+                switch status{
+                case .authorized:
+                    let myPickerController = UIImagePickerController()
+                    myPickerController.sourceType = .photoLibrary
+                    self.present(myPickerController, animated: true)
+                default:
+                    break
+                    /* case .notDetermined:
+                     <#code#>
+                     case .restricted:
+                     <#code#>
+                     case .denied:
+                     <#code#>*/
+                }
+            }
+        }
+    }
+    
+    @IBAction func addPhotoS4(_ sender: UIButton) {
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
+            PHPhotoLibrary.requestAuthorization { (status) in
+                switch status{
+                case .authorized:
+                    let myPickerController = UIImagePickerController()
+                    myPickerController.sourceType = .photoLibrary
+                    self.present(myPickerController, animated: true)
+                default:
+                    break
+                    /* case .notDetermined:
+                     <#code#>
+                     case .restricted:
+                     <#code#>
+                     case .denied:
+                     <#code#>*/
+                }
+            }
+        }
+    }
+    
+    @IBAction func addPhotoRectB(_ sender: UIButton) {
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
+            PHPhotoLibrary.requestAuthorization { (status) in
+                switch status{
+                case .authorized:
+                    let myPickerController = UIImagePickerController()
+                    myPickerController.sourceType = .photoLibrary
+                    self.present(myPickerController, animated: true)
+                default:
+                    break
+                    /* case .notDetermined:
+                     <#code#>
+                     case .restricted:
+                     <#code#>
+                     case .denied:
+                     <#code#>*/
+                }
+            }
+        }
+    }
+    
+    @IBAction func addPhotoRectT(_ sender: UIButton) {
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
+            PHPhotoLibrary.requestAuthorization { (status) in
+                switch status{
+                case .authorized:
+                    let myPickerController = UIImagePickerController()
+                    myPickerController.sourceType = .photoLibrary
+                    self.present(myPickerController, animated: true)
+                default:
+                    break
+                    /* case .notDetermined:
+                     <#code#>
+                     case .restricted:
+                     <#code#>
+                     case .denied:
+                     <#code#>*/
+                }
+            }
+        }
+    }
+    
+
+    
+    /*
+    //IMPORT IMAGE
+    
+    func imagePickerController(){
+        switch imagePicked{
+        case 1:
+            image1.image = image
+        case 2:
+            image2.image = image
+        case 3:
+            image3.image = image
+        case 4:
+            image4.image = image
+        case 5:
+            image5.image = image
+        case 6:
+            image6.image = image
+        default:
+            print("erreur")
+        }
+    }
+    
+    func importImageFromAlbum(_ image: UIImagePickerController){
+        image.delegate = (self as! UIImagePickerControllerDelegate & UINavigationControllerDelegate)
+        image.sourceType = UIImagePickerController.SourceType.photoLibrary
+        image.allowsEditing = false
+    }
+
+    @IBAction func importImage(_ sender : UIButton){
+        imagePicked = 1
+        importImageFromAlbum(image)
+        self.present(image, animated: true){
+            self.image1.isHidden = false
+        }
+        
+    }
+    
+    @IBAction func importImage2(_ sender : UIButton){
+        imagePicked = 2
+        importImageFromAlbum(image)
+        self.present(image, animated: true){
+            self.image2.isHidden = false
+        }
+        
+    }
+    
+    @IBAction func importImage3(_ sender : UIButton){
+        imagePicked = 3
+        importImageFromAlbum(image)
+        self.present(image, animated: true){
+            self.image3.isHidden = false
+        }
+        
+    }
+    
+    @IBAction func importImage4(_ sender : UIButton){
+        imagePicked = 4
+        importImageFromAlbum(image)
+        self.present(image, animated: true){
+            self.image4.isHidden = false
+        }
+        
+    }
+    
+    @IBAction func importImage5(_ sender : UIButton){
+        imagePicked = 5
+        importImageFromAlbum(image)
+        self.present(image, animated: true){
+            self.image5.isHidden = false
+        }
+        
+    }
+    
+    @IBAction func importImage6(_ sender : UIButton){
+        imagePicked = 6
+        importImageFromAlbum(image)
+        self.present(image, animated: true){
+            self.image6.isHidden = false
+        }
+        
+    }
+    
+    */
+    
     
 
 }
