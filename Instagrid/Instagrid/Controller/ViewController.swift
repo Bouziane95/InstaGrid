@@ -13,8 +13,8 @@ class ViewController: UIViewController {
     //LOGIC INITIALIZATION
     
     let pasteView = PasteView()
-    //let image = UIImagePickerController()
-    //var imagePicked = 0
+    let image = UIImagePickerController()
+    var imagePicked = 0
     
     // VARIABLES DECLARATIONS
     
@@ -51,7 +51,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Init UI with the layout one and the button one selected
         showLayout(id:1)
-        paste.type = .one
         buttonOneHover.isHidden = false
         buttonTwoHover.isHidden = true
         buttonThreeHover.isHidden = true
@@ -62,7 +61,6 @@ class ViewController: UIViewController {
     //show layout One and highlight button one
     @IBAction func selectLayoutOne(){
         showLayout(id:1)
-        paste.type = .one
         buttonOneHover.isHidden = false
         buttonTwoHover.isHidden = true
         buttonThreeHover.isHidden = true
@@ -70,7 +68,6 @@ class ViewController: UIViewController {
     //show layout two and highlight button two
     @IBAction func selectLayoutTwo(){
         showLayout(id:2)
-        paste.type = .two
         buttonOneHover.isHidden = true
         buttonTwoHover.isHidden = false
         buttonThreeHover.isHidden = true
@@ -78,7 +75,6 @@ class ViewController: UIViewController {
     //show layout three and highlight button three
     @IBAction func selectLayoutThree(){
         showLayout(id:3)
-        paste.type = .three
         buttonOneHover.isHidden = true
         buttonTwoHover.isHidden = true
         buttonThreeHover.isHidden = false
@@ -95,218 +91,301 @@ class ViewController: UIViewController {
     }
     
     
+    //Access to the photo library and ask the permission of access
     @IBAction func addPhotoS1(_ sender: UIButton) {
+        imagePicked = 1
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
             PHPhotoLibrary.requestAuthorization { (status) in
                 switch status{
                 case .authorized:
                     let myPickerController = UIImagePickerController()
+                    myPickerController.delegate = self
                     myPickerController.sourceType = .photoLibrary
                     self.present(myPickerController, animated: true)
-                default:
-                    break
-               /* case .notDetermined:
-                    <#code#>
+                
+               case .notDetermined:
+                    if status == PHAuthorizationStatus.authorized{
+                        let myPickerController = UIImagePickerController()
+                        myPickerController.delegate = self
+                        myPickerController.sourceType = .photoLibrary
+                        self.present(myPickerController, animated: true)
+                    }
+                    
                 case .restricted:
-                    <#code#>
+                    let alert = UIAlertController(title: "Photo Library access restricted", message: "Photo Library is rectricted and cannot be accessed", preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: "Ok", style: .default)
+                    alert.addAction(okAction)
+                    self.present(alert, animated: true)
+                    
+                    
                 case .denied:
-                    <#code#>*/
-                }
+                    let alert = UIAlertController(title: "Photo Library access denied", message: "Previously denied, please change your settings if you want to change this", preferredStyle: .alert)
+                    let goToSettingsAction = UIAlertAction(title: "Go to settings", style: .default){ (action) in
+                        DispatchQueue.main.async {
+                            let url = URL(string: UIApplication.openSettingsURLString)!
+                            UIApplication.shared.open(url, options: [:])
+                        }
+                    }
+                    let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+                    
+                    alert.addAction(goToSettingsAction)
+                    alert.addAction(cancelAction)
+                    self.present(alert, animated: true)
             }
         }
     }
+}
+    
     
     @IBAction func addPhotoS2(_ sender: UIButton) {
+        imagePicked = 2
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
             PHPhotoLibrary.requestAuthorization { (status) in
                 switch status{
                 case .authorized:
                     let myPickerController = UIImagePickerController()
+                    myPickerController.delegate = self
                     myPickerController.sourceType = .photoLibrary
                     self.present(myPickerController, animated: true)
-                default:
-                    break
-                    /* case .notDetermined:
-                     <#code#>
-                     case .restricted:
-                     <#code#>
-                     case .denied:
-                     <#code#>*/
+                    
+                case .notDetermined:
+                    if status == PHAuthorizationStatus.authorized{
+                        let myPickerController = UIImagePickerController()
+                        myPickerController.delegate = self
+                        myPickerController.sourceType = .photoLibrary
+                        self.present(myPickerController, animated: true)
+                    }
+                    
+                case .restricted:
+                    let alert = UIAlertController(title: "Photo Library access restricted", message: "Photo Library is rectricted and cannot be accessed", preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: "Ok", style: .default)
+                    alert.addAction(okAction)
+                    self.present(alert, animated: true)
+                
+                case .denied:
+                    let alert = UIAlertController(title: "Photo Library access denied", message: "Previously denied, please change your settings if you want to change this", preferredStyle: .alert)
+                    let goToSettingsAction = UIAlertAction(title: "Go to settings", style: .default){ (action) in
+                        DispatchQueue.main.async {
+                            let url = URL(string: UIApplication.openSettingsURLString)!
+                            UIApplication.shared.open(url, options: [:])
+                        }
+                    }
+                    
+                    let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+                    
+                    alert.addAction(goToSettingsAction)
+                    alert.addAction(cancelAction)
+                    self.present(alert, animated: true)
+                
+                   
                 }
             }
         }
     }
     
     @IBAction func addPhotoS3(_ sender: UIButton) {
+        imagePicked = 3
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
             PHPhotoLibrary.requestAuthorization { (status) in
                 switch status{
                 case .authorized:
                     let myPickerController = UIImagePickerController()
+                    myPickerController.delegate = self
                     myPickerController.sourceType = .photoLibrary
                     self.present(myPickerController, animated: true)
-                default:
-                    break
-                    /* case .notDetermined:
-                     <#code#>
-                     case .restricted:
-                     <#code#>
-                     case .denied:
-                     <#code#>*/
+                    
+                case .notDetermined:
+                    if status == PHAuthorizationStatus.authorized{
+                        let myPickerController = UIImagePickerController()
+                        myPickerController.delegate = self
+                        myPickerController.sourceType = .photoLibrary
+                        self.present(myPickerController, animated: true)
+                    }
+                
+                case .restricted:
+                    let alert = UIAlertController(title: "Photo Library access restricted", message: "Photo Library is rectricted and cannot be accessed", preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: "Ok", style: .default)
+                    alert.addAction(okAction)
+                    self.present(alert, animated: true)
+                
+                case .denied:
+                    let alert = UIAlertController(title: "Photo Library access denied", message: "Previously denied, please change your settings if you want to change this", preferredStyle: .alert)
+                    let goToSettingsAction = UIAlertAction(title: "Go to settings", style: .default){ (action) in
+                        DispatchQueue.main.async {
+                            let url = URL(string: UIApplication.openSettingsURLString)!
+                            UIApplication.shared.open(url, options: [:])
+                        }
+                    }
+                    
+                    let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+                    
+                    alert.addAction(goToSettingsAction)
+                    alert.addAction(cancelAction)
+                    self.present(alert, animated: true)
+                
                 }
             }
         }
     }
     
     @IBAction func addPhotoS4(_ sender: UIButton) {
+        imagePicked = 4
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
             PHPhotoLibrary.requestAuthorization { (status) in
                 switch status{
                 case .authorized:
                     let myPickerController = UIImagePickerController()
+                    myPickerController.delegate = self
                     myPickerController.sourceType = .photoLibrary
                     self.present(myPickerController, animated: true)
-                default:
-                    break
-                    /* case .notDetermined:
-                     <#code#>
-                     case .restricted:
-                     <#code#>
-                     case .denied:
-                     <#code#>*/
+                
+                case .notDetermined:
+                    if status == PHAuthorizationStatus.authorized{
+                        let myPickerController = UIImagePickerController()
+                        myPickerController.delegate = self
+                        myPickerController.sourceType = .photoLibrary
+                        self.present(myPickerController, animated: true)
+                    }
+                    
+                case .restricted:
+                    let alert = UIAlertController(title: "Photo Library access restricted", message: "Photo Library is rectricted and cannot be accessed", preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: "Ok", style: .default)
+                    alert.addAction(okAction)
+                    self.present(alert, animated: true)
+                
+                case .denied:
+                    let alert = UIAlertController(title: "Photo Library access denied", message: "Previously denied, please change your settings if you want to change this", preferredStyle: .alert)
+                    let goToSettingsAction = UIAlertAction(title: "Go to settings", style: .default){ (action) in
+                        DispatchQueue.main.async {
+                            let url = URL(string: UIApplication.openSettingsURLString)!
+                            UIApplication.shared.open(url, options: [:])
+                        }
+                    }
+                
+                    let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+                    
+                    alert.addAction(goToSettingsAction)
+                    alert.addAction(cancelAction)
+                    self.present(alert, animated: true)
+                    
+                
+                
                 }
             }
         }
     }
     
     @IBAction func addPhotoRectB(_ sender: UIButton) {
+        imagePicked = 6
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
             PHPhotoLibrary.requestAuthorization { (status) in
                 switch status{
                 case .authorized:
                     let myPickerController = UIImagePickerController()
+                    myPickerController.delegate = self
                     myPickerController.sourceType = .photoLibrary
                     self.present(myPickerController, animated: true)
-                default:
-                    break
-                    /* case .notDetermined:
-                     <#code#>
-                     case .restricted:
-                     <#code#>
-                     case .denied:
-                     <#code#>*/
+                    
+                case .notDetermined:
+                    if status == PHAuthorizationStatus.authorized{
+                        let myPickerController = UIImagePickerController()
+                        myPickerController.delegate = self
+                        myPickerController.sourceType = .photoLibrary
+                        self.present(myPickerController, animated: true)
+                    }
+                
+                case .restricted:
+                    let alert = UIAlertController(title: "Photo Library access restricted", message: "Photo Library is rectricted and cannot be accessed", preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: "Ok", style: .default)
+                    alert.addAction(okAction)
+                    self.present(alert, animated: true)
+                    
+                case .denied:
+                    let alert = UIAlertController(title: "Photo Library access denied", message: "Previously denied, please change your settings if you want to change this", preferredStyle: .alert)
+                    let goToSettingsAction = UIAlertAction(title: "Go to settings", style: .default){ (action) in
+                        DispatchQueue.main.async {
+                            let url = URL(string: UIApplication.openSettingsURLString)!
+                            UIApplication.shared.open(url, options: [:])
+                        }
+                    }
+                    let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+                    
+                    alert.addAction(goToSettingsAction)
+                    alert.addAction(cancelAction)
+                    self.present(alert, animated: true)
+                
                 }
             }
         }
     }
     
     @IBAction func addPhotoRectT(_ sender: UIButton) {
+        imagePicked = 5
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
             PHPhotoLibrary.requestAuthorization { (status) in
                 switch status{
                 case .authorized:
                     let myPickerController = UIImagePickerController()
+                    myPickerController.delegate = self
                     myPickerController.sourceType = .photoLibrary
                     self.present(myPickerController, animated: true)
-                default:
-                    break
-                    /* case .notDetermined:
-                     <#code#>
-                     case .restricted:
-                     <#code#>
-                     case .denied:
-                     <#code#>*/
+                    
+                case .notDetermined:
+                    if status == PHAuthorizationStatus.authorized{
+                        let myPickerController = UIImagePickerController()
+                        myPickerController.delegate = self
+                        myPickerController.sourceType = .photoLibrary
+                        self.present(myPickerController, animated: true)
+                    }
+                
+                case .restricted:
+                    let alert = UIAlertController(title: "Photo Library access restricted", message: "Photo Library is rectricted and cannot be accessed", preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: "Ok", style: .default)
+                    alert.addAction(okAction)
+                    self.present(alert, animated: true)
+                    
+                case .denied:
+                    let alert = UIAlertController(title: "Photo Library access denied", message: "Previously denied, please change your settings if you want to change this", preferredStyle: .alert)
+                    let goToSettingsAction = UIAlertAction(title: "Go to settings", style: .default){ (action) in
+                        DispatchQueue.main.async {
+                            let url = URL(string: UIApplication.openSettingsURLString)!
+                            UIApplication.shared.open(url, options: [:])
+                        }
+                    }
+                    
+                    let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+                    
+                    alert.addAction(goToSettingsAction)
+                    alert.addAction(cancelAction)
+                    self.present(alert, animated: true)
                 }
             }
         }
     }
-    
-
-    
-    /*
-    //IMPORT IMAGE
-    
-    func imagePickerController(){
-        switch imagePicked{
-        case 1:
-            image1.image = image
-        case 2:
-            image2.image = image
-        case 3:
-            image3.image = image
-        case 4:
-            image4.image = image
-        case 5:
-            image5.image = image
-        case 6:
-            image6.image = image
-        default:
-            print("erreur")
-        }
-    }
-    
-    func importImageFromAlbum(_ image: UIImagePickerController){
-        image.delegate = (self as! UIImagePickerControllerDelegate & UINavigationControllerDelegate)
-        image.sourceType = UIImagePickerController.SourceType.photoLibrary
-        image.allowsEditing = false
-    }
-
-    @IBAction func importImage(_ sender : UIButton){
-        imagePicked = 1
-        importImageFromAlbum(image)
-        self.present(image, animated: true){
-            self.image1.isHidden = false
-        }
-        
-    }
-    
-    @IBAction func importImage2(_ sender : UIButton){
-        imagePicked = 2
-        importImageFromAlbum(image)
-        self.present(image, animated: true){
-            self.image2.isHidden = false
-        }
-        
-    }
-    
-    @IBAction func importImage3(_ sender : UIButton){
-        imagePicked = 3
-        importImageFromAlbum(image)
-        self.present(image, animated: true){
-            self.image3.isHidden = false
-        }
-        
-    }
-    
-    @IBAction func importImage4(_ sender : UIButton){
-        imagePicked = 4
-        importImageFromAlbum(image)
-        self.present(image, animated: true){
-            self.image4.isHidden = false
-        }
-        
-    }
-    
-    @IBAction func importImage5(_ sender : UIButton){
-        imagePicked = 5
-        importImageFromAlbum(image)
-        self.present(image, animated: true){
-            self.image5.isHidden = false
-        }
-        
-    }
-    
-    @IBAction func importImage6(_ sender : UIButton){
-        imagePicked = 6
-        importImageFromAlbum(image)
-        self.present(image, animated: true){
-            self.image6.isHidden = false
-        }
-        
-    }
-    
-    */
-    
-    
-
 }
+
+//IMPORT IMAGE
+extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
+            switch imagePicked{
+            case 1:
+                image1.image = image
+            case 2:
+                image2.image = image
+            case 3:
+                image3.image = image
+            case 4:
+                image4.image = image
+            case 5:
+                image5.image = image
+            case 6:
+                image6.image = image
+            default:
+                print("Error while loading the photo")
+            }
+            dismiss(animated: true)
+        }
+    }
+}
+

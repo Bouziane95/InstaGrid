@@ -229,12 +229,12 @@
                         <outlet property="image3" destination="e0g-gZ-2Y5" id="mn5-oF-UnB"/>
                         <outlet property="image4" destination="uRP-yk-nYA" id="H5u-TE-27y"/>
                         <outlet property="image5" destination="S7v-0S-Sbo" id="fCJ-qC-Gq3"/>
-                        <outlet property="image6" destination="vTv-jX-D2t" id="7LK-Zx-fJf"/>
+                        <outlet property="image6" destination="vTv-jX-D2t" id="bK2-mT-COB"/>
                         <outlet property="layoutOneButton" destination="LC9-km-eTn" id="ky2-E8-hTl"/>
                         <outlet property="layoutThreeButton" destination="f1h-E7-nAj" id="dvP-Cd-jGV"/>
                         <outlet property="layoutTwoButton" destination="pYO-0q-lQr" id="fte-Zq-iGo"/>
                         <outlet property="paste" destination="YgC-yJ-SYg" id="Z4D-N2-3Oi"/>
-                        <outlet property="rectBot" destination="Irc-Tk-rjw" id="ax7-xp-qHF"/>
+                        <outlet property="rectBot" destination="Irc-Tk-rjw" id="lwi-TN-wsn"/>
                         <outlet property="rectTop" destination="B2L-w5-d7z" id="FXL-oH-3dX"/>
                         <outlet property="squareFour" destination="HM1-sq-KHw" id="ttD-k7-t7Z"/>
                         <outlet property="squareOne" destination="Ebk-AW-t2u" id="1Yd-r5-19G"/>

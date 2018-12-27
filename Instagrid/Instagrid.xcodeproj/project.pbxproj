@@ -36,8 +36,8 @@
 
 /* Begin PBXFileReference section */
 		845AF74E21CA907F00D064B4 /* PasteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PasteView.swift; path = ../../PasteView.swift; sourceTree = "<group>"; };
-		846D73F421D3E30A007EE95D /* InstagridTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = InstagridTests.xctest; path = "/Users/admin/Desktop/InstaGrid/Instagrid/build/Debug-iphoneos/InstagridTests.xctest"; sourceTree = "<absolute>"; };
-		846D73F521D3E30A007EE95D /* InstagridUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = InstagridUITests.xctest; path = "/Users/admin/Desktop/InstaGrid/Instagrid/build/Debug-iphoneos/InstagridUITests.xctest"; sourceTree = "<absolute>"; };
+		846E9BB521D5167500FC2F5D /* InstagridTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = InstagridTests.xctest; path = "/Users/admin/Desktop/InstaGrid/Instagrid/build/Debug-iphoneos/InstagridTests.xctest"; sourceTree = "<absolute>"; };
+		846E9BB621D5167500FC2F5D /* InstagridUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = InstagridUITests.xctest; path = "/Users/admin/Desktop/InstaGrid/Instagrid/build/Debug-iphoneos/InstagridUITests.xctest"; sourceTree = "<absolute>"; };
 		8470617C21B82A28002524D3 /* ThirstySoftRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ThirstySoftRegular.otf; sourceTree = "<group>"; };
 		8470617D21B82A28002524D3 /* Delm-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Delm-Medium.otf"; sourceTree = "<group>"; };
 		84C54E4621B6C7F9009D482B /* Instagrid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagrid.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -172,7 +172,7 @@
 			);
 			name = InstagridTests;
 			productName = InstagridTests;
-			productReference = 846D73F421D3E30A007EE95D /* InstagridTests.xctest */;
+			productReference = 846E9BB521D5167500FC2F5D /* InstagridTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		84C54E6421B6C7FE009D482B /* InstagridUITests */ = {
@@ -190,7 +190,7 @@
 			);
 			name = InstagridUITests;
 			productName = InstagridUITests;
-			productReference = 846D73F521D3E30A007EE95D /* InstagridUITests.xctest */;
+			productReference = 846E9BB621D5167500FC2F5D /* InstagridUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
