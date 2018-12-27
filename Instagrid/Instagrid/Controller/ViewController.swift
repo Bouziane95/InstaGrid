@@ -92,30 +92,35 @@ class ViewController: UIViewController {
     
     
     //Access to the photo library and ask the permission of access
+    fileprivate func presentPhotoPickerController() {
+        let myPickerController = UIImagePickerController()
+        myPickerController.delegate = self
+        myPickerController.sourceType = .photoLibrary
+        self.present(myPickerController, animated: true)
+    }
+    
+    fileprivate func LibraryAccessRestricted() {
+        let alert = UIAlertController(title: "Photo Library access restricted", message: "Photo Library is rectricted and cannot be accessed", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok", style: .default)
+        alert.addAction(okAction)
+        self.present(alert, animated: true)
+    }
+    
     @IBAction func addPhotoS1(_ sender: UIButton) {
         imagePicked = 1
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
             PHPhotoLibrary.requestAuthorization { (status) in
                 switch status{
                 case .authorized:
-                    let myPickerController = UIImagePickerController()
-                    myPickerController.delegate = self
-                    myPickerController.sourceType = .photoLibrary
-                    self.present(myPickerController, animated: true)
+                    self.presentPhotoPickerController()
                 
                case .notDetermined:
                     if status == PHAuthorizationStatus.authorized{
-                        let myPickerController = UIImagePickerController()
-                        myPickerController.delegate = self
-                        myPickerController.sourceType = .photoLibrary
-                        self.present(myPickerController, animated: true)
+                    self.presentPhotoPickerController()
                     }
                     
                 case .restricted:
-                    let alert = UIAlertController(title: "Photo Library access restricted", message: "Photo Library is rectricted and cannot be accessed", preferredStyle: .alert)
-                    let okAction = UIAlertAction(title: "Ok", style: .default)
-                    alert.addAction(okAction)
-                    self.present(alert, animated: true)
+                    self.LibraryAccessRestricted()
                     
                     
                 case .denied:
@@ -143,24 +148,15 @@ class ViewController: UIViewController {
             PHPhotoLibrary.requestAuthorization { (status) in
                 switch status{
                 case .authorized:
-                    let myPickerController = UIImagePickerController()
-                    myPickerController.delegate = self
-                    myPickerController.sourceType = .photoLibrary
-                    self.present(myPickerController, animated: true)
+                    self.presentPhotoPickerController()
                     
                 case .notDetermined:
                     if status == PHAuthorizationStatus.authorized{
-                        let myPickerController = UIImagePickerController()
-                        myPickerController.delegate = self
-                        myPickerController.sourceType = .photoLibrary
-                        self.present(myPickerController, animated: true)
+                    self.presentPhotoPickerController()
                     }
                     
                 case .restricted:
-                    let alert = UIAlertController(title: "Photo Library access restricted", message: "Photo Library is rectricted and cannot be accessed", preferredStyle: .alert)
-                    let okAction = UIAlertAction(title: "Ok", style: .default)
-                    alert.addAction(okAction)
-                    self.present(alert, animated: true)
+                    self.LibraryAccessRestricted()
                 
                 case .denied:
                     let alert = UIAlertController(title: "Photo Library access denied", message: "Previously denied, please change your settings if you want to change this", preferredStyle: .alert)
@@ -189,24 +185,15 @@ class ViewController: UIViewController {
             PHPhotoLibrary.requestAuthorization { (status) in
                 switch status{
                 case .authorized:
-                    let myPickerController = UIImagePickerController()
-                    myPickerController.delegate = self
-                    myPickerController.sourceType = .photoLibrary
-                    self.present(myPickerController, animated: true)
+                    self.presentPhotoPickerController()
                     
                 case .notDetermined:
                     if status == PHAuthorizationStatus.authorized{
-                        let myPickerController = UIImagePickerController()
-                        myPickerController.delegate = self
-                        myPickerController.sourceType = .photoLibrary
-                        self.present(myPickerController, animated: true)
+                    self.presentPhotoPickerController()
                     }
                 
                 case .restricted:
-                    let alert = UIAlertController(title: "Photo Library access restricted", message: "Photo Library is rectricted and cannot be accessed", preferredStyle: .alert)
-                    let okAction = UIAlertAction(title: "Ok", style: .default)
-                    alert.addAction(okAction)
-                    self.present(alert, animated: true)
+                    self.LibraryAccessRestricted()
                 
                 case .denied:
                     let alert = UIAlertController(title: "Photo Library access denied", message: "Previously denied, please change your settings if you want to change this", preferredStyle: .alert)
@@ -234,24 +221,15 @@ class ViewController: UIViewController {
             PHPhotoLibrary.requestAuthorization { (status) in
                 switch status{
                 case .authorized:
-                    let myPickerController = UIImagePickerController()
-                    myPickerController.delegate = self
-                    myPickerController.sourceType = .photoLibrary
-                    self.present(myPickerController, animated: true)
+                    self.presentPhotoPickerController()
                 
                 case .notDetermined:
                     if status == PHAuthorizationStatus.authorized{
-                        let myPickerController = UIImagePickerController()
-                        myPickerController.delegate = self
-                        myPickerController.sourceType = .photoLibrary
-                        self.present(myPickerController, animated: true)
+                    self.presentPhotoPickerController()
                     }
                     
                 case .restricted:
-                    let alert = UIAlertController(title: "Photo Library access restricted", message: "Photo Library is rectricted and cannot be accessed", preferredStyle: .alert)
-                    let okAction = UIAlertAction(title: "Ok", style: .default)
-                    alert.addAction(okAction)
-                    self.present(alert, animated: true)
+                    self.LibraryAccessRestricted()
                 
                 case .denied:
                     let alert = UIAlertController(title: "Photo Library access denied", message: "Previously denied, please change your settings if you want to change this", preferredStyle: .alert)
@@ -281,24 +259,15 @@ class ViewController: UIViewController {
             PHPhotoLibrary.requestAuthorization { (status) in
                 switch status{
                 case .authorized:
-                    let myPickerController = UIImagePickerController()
-                    myPickerController.delegate = self
-                    myPickerController.sourceType = .photoLibrary
-                    self.present(myPickerController, animated: true)
+                    self.presentPhotoPickerController()
                     
                 case .notDetermined:
                     if status == PHAuthorizationStatus.authorized{
-                        let myPickerController = UIImagePickerController()
-                        myPickerController.delegate = self
-                        myPickerController.sourceType = .photoLibrary
-                        self.present(myPickerController, animated: true)
+                    self.presentPhotoPickerController()
                     }
                 
                 case .restricted:
-                    let alert = UIAlertController(title: "Photo Library access restricted", message: "Photo Library is rectricted and cannot be accessed", preferredStyle: .alert)
-                    let okAction = UIAlertAction(title: "Ok", style: .default)
-                    alert.addAction(okAction)
-                    self.present(alert, animated: true)
+                    self.LibraryAccessRestricted()
                     
                 case .denied:
                     let alert = UIAlertController(title: "Photo Library access denied", message: "Previously denied, please change your settings if you want to change this", preferredStyle: .alert)
@@ -325,24 +294,15 @@ class ViewController: UIViewController {
             PHPhotoLibrary.requestAuthorization { (status) in
                 switch status{
                 case .authorized:
-                    let myPickerController = UIImagePickerController()
-                    myPickerController.delegate = self
-                    myPickerController.sourceType = .photoLibrary
-                    self.present(myPickerController, animated: true)
+                    self.presentPhotoPickerController()
                     
                 case .notDetermined:
                     if status == PHAuthorizationStatus.authorized{
-                        let myPickerController = UIImagePickerController()
-                        myPickerController.delegate = self
-                        myPickerController.sourceType = .photoLibrary
-                        self.present(myPickerController, animated: true)
+                    self.presentPhotoPickerController()
                     }
                 
                 case .restricted:
-                    let alert = UIAlertController(title: "Photo Library access restricted", message: "Photo Library is rectricted and cannot be accessed", preferredStyle: .alert)
-                    let okAction = UIAlertAction(title: "Ok", style: .default)
-                    alert.addAction(okAction)
-                    self.present(alert, animated: true)
+                    self.LibraryAccessRestricted()
                     
                 case .denied:
                     let alert = UIAlertController(title: "Photo Library access denied", message: "Previously denied, please change your settings if you want to change this", preferredStyle: .alert)
