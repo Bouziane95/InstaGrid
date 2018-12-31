@@ -15,6 +15,8 @@ class ViewController: UIViewController {
     let pasteView = PasteView()
     let image = UIImagePickerController()
     var imagePicked = 0
+    var orientation = false
+    let logic = Logic()
     
     // VARIABLES DECLARATIONS
     
@@ -46,6 +48,7 @@ class ViewController: UIViewController {
     
    
     
+    @IBOutlet weak var img: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +57,31 @@ class ViewController: UIViewController {
         buttonOneHover.isHidden = false
         buttonTwoHover.isHidden = true
         buttonThreeHover.isHidden = true
+        
+        img.isUserInteractionEnabled = true
+        
+        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(self.swipeGesture))
+        swipeUp.direction = UISwipeGestureRecognizer.Direction.up
+        img.addGestureRecognizer(swipeUp)
+        
+        
+    }
+    
+    
+    
+    @objc func swipeGesture(sender: UIGestureRecognizer){
+        if let swipeGesture = sender as? UISwipeGestureRecognizer
+        {
+            switch swipeGesture.direction{
+            case UISwipeGestureRecognizer.Direction.up:
+                let activityVC = UIActivityViewController(activityItems: [self.paste], applicationActivities: nil)
+                activityVC.popoverPresentationController?.sourceView = self.view
+                self.present(activityVC, animated: true, completion: nil)
+            default:
+                break
+            }
+        }
+        
     }
     
     //BUTTON INTERACTIONS
@@ -91,7 +119,7 @@ class ViewController: UIViewController {
     }
     
     
-    //Access to the photo library and ask the permission of access
+    //Access to the photo library for each button and ask the permission of access
     fileprivate func presentPhotoPickerController() {
         let myPickerController = UIImagePickerController()
         myPickerController.delegate = self
@@ -140,7 +168,6 @@ class ViewController: UIViewController {
         }
     }
 }
-    
     
     @IBAction func addPhotoS2(_ sender: UIButton) {
         imagePicked = 2
@@ -347,5 +374,49 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
             dismiss(animated: true)
         }
     }
-}
+    /*
+    private func transformPaste(){
+        let transform = CGAffineTransform(translationX: 0, y: -600)
+        UIView.animate(withDuration: 0.3, animations: {self.paste.transform = transform}) { (success) in if success {self.resetPaste()}}
+    }
+    
+    private func resetPaste(){
+        self.image1.isHidden = true
+        self.image2.isHidden = true
+        self.image3.isHidden = true
+        self.image4.isHidden = true
+        self.image5.isHidden = true
+        self.image6.isHidden = true
+        self.image1.image = nil
+        self.image2.image = nil
+        self.image3.image = nil
+        self.image4.image = nil
+        self.image5.image = nil
+        self.image6.image = nil
+        UIView.animate(withDuration: 0.7, delay: 0.5, options: [], animations: {self.paste.transform = .identity})
+    }
+    
+    private func share(){
+        if paste.isFull(){
+            transformPaste()
+            //saveAndShare()
+        } else {
+            let alert = UIAlertController(title: "Caution", message: "All the space are not plenty", preferredStyle: .alert)
+        }
+    }
+    
+    private func dragCollage(swipe: UISwipeGestureRecognizer){
+        orientation = logic.checkOrientation()
+        if orientation == false && swipe.direction == .up {
+            share()
+        } else if orientation == true && swipe.direction == .left {
+            share()
+        } else {
+            print("This gesture is not recognized in this orientation")
+        }
+    
+       
+}*/
+    
 
+}

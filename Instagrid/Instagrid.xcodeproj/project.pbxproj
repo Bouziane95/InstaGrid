@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		840C7CE921DA4CC0002EBD6E /* Logic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840C7CE821DA4CC0002EBD6E /* Logic.swift */; };
 		845AF74F21CA907F00D064B4 /* PasteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845AF74E21CA907F00D064B4 /* PasteView.swift */; };
 		8470617E21B82A28002524D3 /* ThirstySoftRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8470617C21B82A28002524D3 /* ThirstySoftRegular.otf */; };
 		8470617F21B82A28002524D3 /* Delm-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8470617D21B82A28002524D3 /* Delm-Medium.otf */; };
@@ -35,9 +36,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		840C7CE621DA47AD002EBD6E /* InstagridTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = InstagridTests.xctest; path = "/Users/admin/Desktop/InstaGrid/Instagrid/build/Debug-iphoneos/InstagridTests.xctest"; sourceTree = "<absolute>"; };
+		840C7CE721DA47AD002EBD6E /* InstagridUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = InstagridUITests.xctest; path = "/Users/admin/Desktop/InstaGrid/Instagrid/build/Debug-iphoneos/InstagridUITests.xctest"; sourceTree = "<absolute>"; };
+		840C7CE821DA4CC0002EBD6E /* Logic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logic.swift; sourceTree = "<group>"; };
 		845AF74E21CA907F00D064B4 /* PasteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PasteView.swift; path = ../../PasteView.swift; sourceTree = "<group>"; };
-		846E9BB521D5167500FC2F5D /* InstagridTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = InstagridTests.xctest; path = "/Users/admin/Desktop/InstaGrid/Instagrid/build/Debug-iphoneos/InstagridTests.xctest"; sourceTree = "<absolute>"; };
-		846E9BB621D5167500FC2F5D /* InstagridUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = InstagridUITests.xctest; path = "/Users/admin/Desktop/InstaGrid/Instagrid/build/Debug-iphoneos/InstagridUITests.xctest"; sourceTree = "<absolute>"; };
 		8470617C21B82A28002524D3 /* ThirstySoftRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ThirstySoftRegular.otf; sourceTree = "<group>"; };
 		8470617D21B82A28002524D3 /* Delm-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Delm-Medium.otf"; sourceTree = "<group>"; };
 		84C54E4621B6C7F9009D482B /* Instagrid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagrid.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,6 +90,7 @@
 		847A34D121BEAFAD00AFE477 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				840C7CE821DA4CC0002EBD6E /* Logic.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -172,7 +175,7 @@
 			);
 			name = InstagridTests;
 			productName = InstagridTests;
-			productReference = 846E9BB521D5167500FC2F5D /* InstagridTests.xctest */;
+			productReference = 840C7CE621DA47AD002EBD6E /* InstagridTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		84C54E6421B6C7FE009D482B /* InstagridUITests */ = {
@@ -190,7 +193,7 @@
 			);
 			name = InstagridUITests;
 			productName = InstagridUITests;
-			productReference = 846E9BB621D5167500FC2F5D /* InstagridUITests.xctest */;
+			productReference = 840C7CE721DA47AD002EBD6E /* InstagridUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -270,6 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				840C7CE921DA4CC0002EBD6E /* Logic.swift in Sources */,
 				845AF74F21CA907F00D064B4 /* PasteView.swift in Sources */,
 				84C54E4C21B6C7F9009D482B /* ViewController.swift in Sources */,
 				84C54E4A21B6C7F9009D482B /* AppDelegate.swift in Sources */,
