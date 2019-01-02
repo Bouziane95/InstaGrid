@@ -14,9 +14,7 @@ class Logic{
         var landscapeOrientation = false
         if UIDevice.current.orientation.isLandscape{
             landscapeOrientation = true
-            print("Landscape")
         }else{
-            print("Portrait")
             landscapeOrientation = false
         }
         return landscapeOrientation

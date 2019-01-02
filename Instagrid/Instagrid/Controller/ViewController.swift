@@ -57,12 +57,21 @@ class ViewController: UIViewController {
         buttonOneHover.isHidden = false
         buttonTwoHover.isHidden = true
         buttonThreeHover.isHidden = true
-        
-        //img.isUserInteractionEnabled = true
-        
+    
         let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(dragPaste(swipe:)))
         swipeUp.direction = UISwipeGestureRecognizer.Direction.up
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(dragPaste(swipe:)))
+        swipeLeft.direction = UISwipeGestureRecognizer.Direction.up
         self.view.addGestureRecognizer(swipeUp)
+        self.view.addGestureRecognizer(swipeLeft)
+        
+        orientation = logic.checkOrientation()
+        if orientation{
+            let landscapeRawValue = UIInterfaceOrientation.landscapeLeft.rawValue
+            UIDevice.current.setValue(landscapeRawValue, forKey: "orientation")
+        } else {
+            
+        }
     }
     
     
@@ -225,7 +234,7 @@ class ViewController: UIViewController {
         } else if orientation == true && swipe.direction == .left{
             share()
         } else{
-            print("this swipe is not allowed in this orientation")
+            popAlert(title: "Ouch", message: "This swipe is not allowed in this orientation")
         }
     }
     
