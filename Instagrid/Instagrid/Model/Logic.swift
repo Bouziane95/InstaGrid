@@ -21,4 +21,16 @@ class Logic{
         }
         return landscapeOrientation
     }
+    
+    func convertUiViewToImage(from view: PasteView) -> UIImage?{
+        
+        //Define the zone we want to capture
+        UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.isOpaque, 0.0)
+        view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
+        
+        //Capture the image
+        let img = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return img
+    }
 }

@@ -48,7 +48,7 @@ class ViewController: UIViewController {
     
    
     
-    @IBOutlet weak var img: UIImageView!
+    //@IBOutlet weak var img: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,13 +58,11 @@ class ViewController: UIViewController {
         buttonTwoHover.isHidden = true
         buttonThreeHover.isHidden = true
         
-        img.isUserInteractionEnabled = true
+        //img.isUserInteractionEnabled = true
         
-        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(self.swipeGesture))
+        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(dragPaste(swipe:)))
         swipeUp.direction = UISwipeGestureRecognizer.Direction.up
-        img.addGestureRecognizer(swipeUp)
-        
-        
+        self.view.addGestureRecognizer(swipeUp)
     }
     
     
@@ -134,43 +132,7 @@ class ViewController: UIViewController {
         self.present(alert, animated: true)
     }
     
-    @IBAction func addPhotoS1(_ sender: UIButton) {
-        imagePicked = 1
-        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
-            PHPhotoLibrary.requestAuthorization { (status) in
-                switch status{
-                case .authorized:
-                    self.presentPhotoPickerController()
-                
-               case .notDetermined:
-                    if status == PHAuthorizationStatus.authorized{
-                    self.presentPhotoPickerController()
-                    }
-                    
-                case .restricted:
-                    self.LibraryAccessRestricted()
-                    
-                    
-                case .denied:
-                    let alert = UIAlertController(title: "Photo Library access denied", message: "Previously denied, please change your settings if you want to change this", preferredStyle: .alert)
-                    let goToSettingsAction = UIAlertAction(title: "Go to settings", style: .default){ (action) in
-                        DispatchQueue.main.async {
-                            let url = URL(string: UIApplication.openSettingsURLString)!
-                            UIApplication.shared.open(url, options: [:])
-                        }
-                    }
-                    let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
-                    
-                    alert.addAction(goToSettingsAction)
-                    alert.addAction(cancelAction)
-                    self.present(alert, animated: true)
-            }
-        }
-    }
-}
-    
-    @IBAction func addPhotoS2(_ sender: UIButton) {
-        imagePicked = 2
+    func restrictions(){
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
             PHPhotoLibrary.requestAuthorization { (status) in
                 switch status{
@@ -179,12 +141,13 @@ class ViewController: UIViewController {
                     
                 case .notDetermined:
                     if status == PHAuthorizationStatus.authorized{
-                    self.presentPhotoPickerController()
+                        self.presentPhotoPickerController()
                     }
                     
                 case .restricted:
                     self.LibraryAccessRestricted()
-                
+                    
+                    
                 case .denied:
                     let alert = UIAlertController(title: "Photo Library access denied", message: "Previously denied, please change your settings if you want to change this", preferredStyle: .alert)
                     let goToSettingsAction = UIAlertAction(title: "Go to settings", style: .default){ (action) in
@@ -193,162 +156,64 @@ class ViewController: UIViewController {
                             UIApplication.shared.open(url, options: [:])
                         }
                     }
-                    
                     let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
                     
                     alert.addAction(goToSettingsAction)
                     alert.addAction(cancelAction)
                     self.present(alert, animated: true)
-                
-                   
                 }
             }
         }
+        
+    }
+    @IBAction func addPhotoS1(_ sender: UIButton) {
+        imagePicked = 1
+        restrictions()
+        
+    }
+    
+    @IBAction func addPhotoS2(_ sender: UIButton) {
+        imagePicked = 2
+        restrictions()
     }
     
     @IBAction func addPhotoS3(_ sender: UIButton) {
         imagePicked = 3
-        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
-            PHPhotoLibrary.requestAuthorization { (status) in
-                switch status{
-                case .authorized:
-                    self.presentPhotoPickerController()
-                    
-                case .notDetermined:
-                    if status == PHAuthorizationStatus.authorized{
-                    self.presentPhotoPickerController()
-                    }
-                
-                case .restricted:
-                    self.LibraryAccessRestricted()
-                
-                case .denied:
-                    let alert = UIAlertController(title: "Photo Library access denied", message: "Previously denied, please change your settings if you want to change this", preferredStyle: .alert)
-                    let goToSettingsAction = UIAlertAction(title: "Go to settings", style: .default){ (action) in
-                        DispatchQueue.main.async {
-                            let url = URL(string: UIApplication.openSettingsURLString)!
-                            UIApplication.shared.open(url, options: [:])
-                        }
-                    }
-                    
-                    let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
-                    
-                    alert.addAction(goToSettingsAction)
-                    alert.addAction(cancelAction)
-                    self.present(alert, animated: true)
-                
-                }
-            }
-        }
+        restrictions()
     }
     
     @IBAction func addPhotoS4(_ sender: UIButton) {
         imagePicked = 4
-        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
-            PHPhotoLibrary.requestAuthorization { (status) in
-                switch status{
-                case .authorized:
-                    self.presentPhotoPickerController()
-                
-                case .notDetermined:
-                    if status == PHAuthorizationStatus.authorized{
-                    self.presentPhotoPickerController()
-                    }
-                    
-                case .restricted:
-                    self.LibraryAccessRestricted()
-                
-                case .denied:
-                    let alert = UIAlertController(title: "Photo Library access denied", message: "Previously denied, please change your settings if you want to change this", preferredStyle: .alert)
-                    let goToSettingsAction = UIAlertAction(title: "Go to settings", style: .default){ (action) in
-                        DispatchQueue.main.async {
-                            let url = URL(string: UIApplication.openSettingsURLString)!
-                            UIApplication.shared.open(url, options: [:])
-                        }
-                    }
-                
-                    let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
-                    
-                    alert.addAction(goToSettingsAction)
-                    alert.addAction(cancelAction)
-                    self.present(alert, animated: true)
-                    
-                
-                
-                }
-            }
-        }
-    }
-    
-    @IBAction func addPhotoRectB(_ sender: UIButton) {
-        imagePicked = 6
-        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
-            PHPhotoLibrary.requestAuthorization { (status) in
-                switch status{
-                case .authorized:
-                    self.presentPhotoPickerController()
-                    
-                case .notDetermined:
-                    if status == PHAuthorizationStatus.authorized{
-                    self.presentPhotoPickerController()
-                    }
-                
-                case .restricted:
-                    self.LibraryAccessRestricted()
-                    
-                case .denied:
-                    let alert = UIAlertController(title: "Photo Library access denied", message: "Previously denied, please change your settings if you want to change this", preferredStyle: .alert)
-                    let goToSettingsAction = UIAlertAction(title: "Go to settings", style: .default){ (action) in
-                        DispatchQueue.main.async {
-                            let url = URL(string: UIApplication.openSettingsURLString)!
-                            UIApplication.shared.open(url, options: [:])
-                        }
-                    }
-                    let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
-                    
-                    alert.addAction(goToSettingsAction)
-                    alert.addAction(cancelAction)
-                    self.present(alert, animated: true)
-                
-                }
-            }
-        }
+        restrictions()
     }
     
     @IBAction func addPhotoRectT(_ sender: UIButton) {
         imagePicked = 5
-        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
-            PHPhotoLibrary.requestAuthorization { (status) in
-                switch status{
-                case .authorized:
-                    self.presentPhotoPickerController()
-                    
-                case .notDetermined:
-                    if status == PHAuthorizationStatus.authorized{
-                    self.presentPhotoPickerController()
-                    }
-                
-                case .restricted:
-                    self.LibraryAccessRestricted()
-                    
-                case .denied:
-                    let alert = UIAlertController(title: "Photo Library access denied", message: "Previously denied, please change your settings if you want to change this", preferredStyle: .alert)
-                    let goToSettingsAction = UIAlertAction(title: "Go to settings", style: .default){ (action) in
-                        DispatchQueue.main.async {
-                            let url = URL(string: UIApplication.openSettingsURLString)!
-                            UIApplication.shared.open(url, options: [:])
-                        }
-                    }
-                    
-                    let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
-                    
-                    alert.addAction(goToSettingsAction)
-                    alert.addAction(cancelAction)
-                    self.present(alert, animated: true)
-                }
-            }
+        restrictions()
+    }
+    
+    @IBAction func addPhotoRectB(_ sender: UIButton) {
+        imagePicked = 6
+        restrictions()
+    }
+    
+    private func saveAndShare(){
+        let imageToSave = logic.convertUiViewToImage(from: paste)
+        let activityC = UIActivityViewController(activityItems: [imageToSave!], applicationActivities: nil)
+        present(activityC, animated: true)
+    }
+    
+    @objc private func dragPaste(swipe: UISwipeGestureRecognizer){
+        orientation = logic.checkOrientation()
+        if orientation == false && swipe.direction == .up{
+            saveAndShare()
+        } else if orientation == true && swipe.direction == .left{
+            saveAndShare()
+        } else{
+            print("this swipe is not allowed in this orientation")
         }
     }
+    
 }
 
 //IMPORT IMAGE
@@ -374,49 +239,4 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
             dismiss(animated: true)
         }
     }
-    /*
-    private func transformPaste(){
-        let transform = CGAffineTransform(translationX: 0, y: -600)
-        UIView.animate(withDuration: 0.3, animations: {self.paste.transform = transform}) { (success) in if success {self.resetPaste()}}
-    }
-    
-    private func resetPaste(){
-        self.image1.isHidden = true
-        self.image2.isHidden = true
-        self.image3.isHidden = true
-        self.image4.isHidden = true
-        self.image5.isHidden = true
-        self.image6.isHidden = true
-        self.image1.image = nil
-        self.image2.image = nil
-        self.image3.image = nil
-        self.image4.image = nil
-        self.image5.image = nil
-        self.image6.image = nil
-        UIView.animate(withDuration: 0.7, delay: 0.5, options: [], animations: {self.paste.transform = .identity})
-    }
-    
-    private func share(){
-        if paste.isFull(){
-            transformPaste()
-            //saveAndShare()
-        } else {
-            let alert = UIAlertController(title: "Caution", message: "All the space are not plenty", preferredStyle: .alert)
-        }
-    }
-    
-    private func dragCollage(swipe: UISwipeGestureRecognizer){
-        orientation = logic.checkOrientation()
-        if orientation == false && swipe.direction == .up {
-            share()
-        } else if orientation == true && swipe.direction == .left {
-            share()
-        } else {
-            print("This gesture is not recognized in this orientation")
-        }
-    
-       
-}*/
-    
-
 }

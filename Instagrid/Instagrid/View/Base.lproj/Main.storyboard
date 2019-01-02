@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -214,7 +214,6 @@
                         <outlet property="image4" destination="uRP-yk-nYA" id="H5u-TE-27y"/>
                         <outlet property="image5" destination="S7v-0S-Sbo" id="fCJ-qC-Gq3"/>
                         <outlet property="image6" destination="vTv-jX-D2t" id="bK2-mT-COB"/>
-                        <outlet property="img" destination="EpX-Dq-hb1" id="NPr-q9-jTm"/>
                         <outlet property="layoutOneButton" destination="LC9-km-eTn" id="ky2-E8-hTl"/>
                         <outlet property="layoutThreeButton" destination="f1h-E7-nAj" id="dvP-Cd-jGV"/>
                         <outlet property="layoutTwoButton" destination="pYO-0q-lQr" id="fte-Zq-iGo"/>
