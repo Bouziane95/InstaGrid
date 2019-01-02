@@ -197,6 +197,21 @@ class ViewController: UIViewController {
         restrictions()
     }
     
+    private func popAlert(title : String, message: String){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: {(action) in alert.dismiss(animated: true, completion: nil)
+        }))
+        self.present(alert, animated: true)
+    }
+    
+    private func share(){
+        if paste.full(){
+            saveAndShare()
+        } else{
+            popAlert(title: "Caution", message: "All the spaces are not filled")
+        }
+    }
+    
     private func saveAndShare(){
         let imageToSave = logic.convertUiViewToImage(from: paste)
         let activityC = UIActivityViewController(activityItems: [imageToSave!], applicationActivities: nil)
@@ -206,9 +221,9 @@ class ViewController: UIViewController {
     @objc private func dragPaste(swipe: UISwipeGestureRecognizer){
         orientation = logic.checkOrientation()
         if orientation == false && swipe.direction == .up{
-            saveAndShare()
+            share()
         } else if orientation == true && swipe.direction == .left{
-            saveAndShare()
+            share()
         } else{
             print("this swipe is not allowed in this orientation")
         }

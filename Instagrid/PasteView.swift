@@ -19,6 +19,7 @@ class PasteView: UIView {
     
     //Init the PasteView with the layout one
     var type:Layouts = .one
+    let logic = Logic()
     
     /* This function return an array of bool that say which square or rect view is hidden or not for each view is selected
      I have done an array with this order : RectTop, RectBot, squareOne, squareTwo, squareThree, squareFour */
@@ -37,7 +38,33 @@ class PasteView: UIView {
         }
     }
     
-   
-    
-
+    func full() -> Bool{
+        //SquareOne ImageView
+        let view1 = self.viewWithTag(1) as! UIImageView
+        //SquareTwo ImageView
+        let view2 = self.viewWithTag(2) as! UIImageView
+        //SquareThree ImageView
+        let view3 = self.viewWithTag(3) as! UIImageView
+        //SquareFour ImageView
+        let view4 = self.viewWithTag(4) as! UIImageView
+        //RectTop ImageView
+        let view5 = self.viewWithTag(5) as! UIImageView
+        //RectBot ImageView
+        let view6 = self.viewWithTag(6) as! UIImageView
+        
+        //Init the validation at false
+        var checkSuccess = false
+        
+        switch self.type{
+        case .one:
+            checkSuccess = logic.checkIfFullThree(view3, view4, view5)
+        case .two:
+            checkSuccess = logic.checkIfFullThree(view1, view2, view6)
+        case .three:
+            checkSuccess = logic.checkIfFullFour(view1, view2, view3, view4)
+        }
+        
+        return checkSuccess
+        
+    }
 }

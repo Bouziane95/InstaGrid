@@ -33,4 +33,39 @@ class Logic{
         UIGraphicsEndImageContext()
         return img
     }
+    
+    //Function to check if an UIImageView has an image inside
+    func checkIfImageIsLoaded(view: UIImageView) -> Bool{
+        var imageLoaded = false
+        if view.image != nil{
+            print("There is an image already")
+            imageLoaded = true
+        } else{
+            imageLoaded = false
+        }
+        return imageLoaded
+    }
+    
+    //Function to check if 3 images paste is full
+    func checkIfFullThree(_ view1: UIImageView, _ view2: UIImageView, _ view3: UIImageView) -> Bool{
+        var checkSuccess = false
+        if view1.image != nil && view2.image != nil && view3.image != nil{
+            checkSuccess = true
+        } else{
+            checkSuccess = false
+        }
+        
+        return checkSuccess
+    }
+    
+    //Function to check if 4 images paste is full
+    func checkIfFullFour(_ view1: UIImageView, _ view2: UIImageView, _ view3: UIImageView, _ view4: UIImageView) -> Bool{
+        var checkSuccess = false
+        if view1.image != nil && view2.image != nil && view3.image != nil && view4.image != nil{
+            checkSuccess = true
+        } else{
+            checkSuccess = false
+        }
+        return checkSuccess
+    }
 }
