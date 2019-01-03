@@ -178,7 +178,6 @@ class ViewController: UIViewController {
     @IBAction func addPhotoS1(_ sender: UIButton) {
         imagePicked = 1
         restrictions()
-        
     }
     
     @IBAction func addPhotoS2(_ sender: UIButton) {
@@ -215,6 +214,7 @@ class ViewController: UIViewController {
     
     private func share(){
         if paste.full(){
+            transformPaste()
             saveAndShare()
         } else{
             popAlert(title: "Caution", message: "All the spaces are not filled")
@@ -236,6 +236,29 @@ class ViewController: UIViewController {
         } else{
             popAlert(title: "Ouch", message: "This swipe is not allowed in this orientation")
         }
+    }
+    
+    //Animation the paste view when you share ( swipe up ) and goes back ( y: -600 )
+    private func transformPaste(){
+        let transform = CGAffineTransform(translationX: 0, y: -600)
+        UIView.animate(withDuration: 0.3, animations: {self.paste.transform = transform}) {(success) in if success {self.resetPaste()}}
+    }
+    
+    //For reset the photos after the share
+    private func resetPaste(){
+        self.image1.isHidden = true
+        self.image2.isHidden = true
+        self.image3.isHidden = true
+        self.image4.isHidden = true
+        self.image5.isHidden = true
+        self.image6.isHidden = true
+        self.image1.image = nil
+        self.image2.image = nil
+        self.image3.image = nil
+        self.image4.image = nil
+        self.image5.image = nil
+        self.image6.image = nil
+        UIView.animate(withDuration: 0.7, delay: 0.5, options: [], animations: {self.paste.transform = .identity})
     }
     
 }
