@@ -213,7 +213,7 @@ class ViewController: UIViewController {
     }
     
     private func share(){
-        if paste.full(){
+        if  paste.full(){
             transformPaste()
             saveAndShare()
         } else{
@@ -245,7 +245,7 @@ class ViewController: UIViewController {
     }
     
     //For reset the photos after the share
-    private func resetPaste(){
+   private func resetPaste(){
         self.image1.isHidden = true
         self.image2.isHidden = true
         self.image3.isHidden = true
@@ -258,6 +258,13 @@ class ViewController: UIViewController {
         self.image4.image = nil
         self.image5.image = nil
         self.image6.image = nil
+        self.image1.isHidden = false
+        self.image2.isHidden = false
+        self.image3.isHidden = false
+        self.image4.isHidden = false
+        self.image5.isHidden = false
+        self.image6.isHidden = false
+        
         UIView.animate(withDuration: 0.7, delay: 0.5, options: [], animations: {self.paste.transform = .identity})
     }
     
@@ -265,7 +272,7 @@ class ViewController: UIViewController {
 
 //IMPORT IMAGE
 extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
             switch imagePicked{
             case 1:
@@ -283,7 +290,7 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
             default:
                 print("Error while loading the photo")
             }
-            dismiss(animated: true)
+            dismiss(animated: true, completion: nil)
         }
     }
 }
