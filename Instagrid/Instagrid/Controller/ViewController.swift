@@ -12,7 +12,6 @@ class ViewController: UIViewController {
     
     //LOGIC INITIALIZATION
     
-    let pasteView = PasteView()
     let image = UIImagePickerController()
     var imagePicked = 0
     var orientation = false
@@ -116,7 +115,7 @@ class ViewController: UIViewController {
     }
     
     func showLayout(id:Int){
-        let displays = pasteView.getLayoutInfo(name: id)
+        let displays = paste.getLayoutInfo(name: id)
         rectTop.isHidden = displays[0]
         rectBot.isHidden = displays[1]
         squareOne.isHidden = displays[2]
