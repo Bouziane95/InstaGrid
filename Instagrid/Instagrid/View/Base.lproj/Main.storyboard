@@ -211,7 +211,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TnU-u8-GXl" userLabel="Layout One Button">
-                                <rect key="frame" x="62" y="568" width="74.666666666666686" height="74.333333333333371"/>
+                                <rect key="frame" x="62.000000000000007" y="568" width="74.666666666666686" height="74.333333333333371"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="TnU-u8-GXl" secondAttribute="height" multiplier="40:40" id="KLF-0O-41i"/>
                                 </constraints>
@@ -221,7 +221,7 @@
                                 </connections>
                             </button>
                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Selected" translatesAutoresizingMaskIntoConstraints="NO" id="owY-G4-AZb" userLabel="Button One Hover">
-                                <rect key="frame" x="62" y="568" width="74.666666666666686" height="74.333333333333371"/>
+                                <rect key="frame" x="62.000000000000007" y="568" width="74.666666666666686" height="74.333333333333371"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="owY-G4-AZb" secondAttribute="height" multiplier="40:40" id="TJk-zr-sqd"/>
                                 </constraints>
@@ -232,7 +232,7 @@
                                 </variation>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cii-xv-juv" userLabel="Layout Two Button">
-                                <rect key="frame" x="169.66666666666663" y="568" width="74.666666666666657" height="74.333333333333371"/>
+                                <rect key="frame" x="169.66666666666666" y="568" width="74.666666666666657" height="74.333333333333371"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="cii-xv-juv" secondAttribute="height" multiplier="1:1" id="a3d-gr-64K"/>
                                 </constraints>
@@ -242,7 +242,7 @@
                                 </connections>
                             </button>
                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Selected" translatesAutoresizingMaskIntoConstraints="NO" id="fWb-3u-5RJ" userLabel="Button Two Hover">
-                                <rect key="frame" x="169.66666666666663" y="568" width="74.666666666666657" height="74.333333333333371"/>
+                                <rect key="frame" x="169.66666666666666" y="568" width="74.666666666666657" height="74.333333333333371"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="fWb-3u-5RJ" secondAttribute="height" multiplier="1:1" id="t1x-Rb-ix8"/>
                                 </constraints>
@@ -259,7 +259,7 @@
                                 </constraints>
                                 <state key="normal" backgroundImage="Layout 3"/>
                                 <connections>
-                                    <action selector="selectLayoutThree" destination="BYZ-38-t0r" eventType="touchUpInside" id="b6n-d4-1Qi"/>
+                                    <action selector="selectLayoutThree" destination="BYZ-38-t0r" eventType="touchUpInside" id="fjo-2T-sk1"/>
                                 </connections>
                             </button>
                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Selected" translatesAutoresizingMaskIntoConstraints="NO" id="ZNs-8A-iQX" userLabel="Button Three Hover">
@@ -277,7 +277,7 @@
                                 <rect key="frame" x="147.66666666666666" y="20.000000000000004" width="118.99999999999997" height="39.333333333333343"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="fEl-Gi-M0J" secondAttribute="height" multiplier="118:39" id="bw5-16-sNv"/>
-                                    <constraint firstAttribute="width" constant="118.5" id="epm-gj-M3B"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="118.5" id="epm-gj-M3B"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="118.67" id="jDO-I9-Mcl"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="ThirstySoftRegular" family="Thirsty Soft" pointSize="30"/>
@@ -423,20 +423,20 @@
                             <mask key="constraints">
                                 <exclude reference="snS-cm-rae"/>
                                 <exclude reference="yTa-2i-HlK"/>
+                                <exclude reference="LWv-mM-3fG"/>
+                                <exclude reference="jdc-ae-o4u"/>
                                 <exclude reference="J0G-98-YZd"/>
                                 <exclude reference="DP5-1X-yrw"/>
                                 <exclude reference="fml-OB-KjN"/>
                                 <exclude reference="pb8-z7-Ka7"/>
                                 <exclude reference="09R-tc-MEa"/>
                                 <exclude reference="HWY-py-WFi"/>
+                                <exclude reference="vNP-Yo-lG4"/>
                                 <exclude reference="GcR-O9-yTV"/>
                                 <exclude reference="apF-SI-bTO"/>
                                 <exclude reference="hwu-8B-1nB"/>
                                 <exclude reference="ssB-1W-6Fc"/>
                                 <exclude reference="tyr-iu-mpP"/>
-                                <exclude reference="LWv-mM-3fG"/>
-                                <exclude reference="jdc-ae-o4u"/>
-                                <exclude reference="vNP-Yo-lG4"/>
                                 <exclude reference="8Cv-Ca-fEG"/>
                                 <exclude reference="MIj-eW-vby"/>
                                 <exclude reference="Shh-eT-j4u"/>
@@ -475,6 +475,8 @@
                             <mask key="constraints">
                                 <include reference="snS-cm-rae"/>
                                 <include reference="yTa-2i-HlK"/>
+                                <include reference="LWv-mM-3fG"/>
+                                <include reference="jdc-ae-o4u"/>
                                 <exclude reference="J0G-98-YZd"/>
                                 <include reference="DP5-1X-yrw"/>
                                 <exclude reference="fml-OB-KjN"/>
@@ -482,15 +484,13 @@
                                 <include reference="09R-tc-MEa"/>
                                 <exclude reference="2Fr-J3-QA5"/>
                                 <include reference="HWY-py-WFi"/>
+                                <include reference="vNP-Yo-lG4"/>
                                 <exclude reference="Eah-LV-cK5"/>
                                 <include reference="GcR-O9-yTV"/>
                                 <include reference="apF-SI-bTO"/>
                                 <include reference="hwu-8B-1nB"/>
                                 <include reference="ssB-1W-6Fc"/>
                                 <include reference="tyr-iu-mpP"/>
-                                <include reference="LWv-mM-3fG"/>
-                                <include reference="jdc-ae-o4u"/>
-                                <include reference="vNP-Yo-lG4"/>
                                 <exclude reference="uBB-rP-Rgj"/>
                                 <exclude reference="xiA-PY-VN3"/>
                                 <exclude reference="68O-5D-Bc4"/>

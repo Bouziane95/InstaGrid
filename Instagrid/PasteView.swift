@@ -27,12 +27,15 @@ class PasteView: UIView {
     func getLayoutInfo(name:Int) -> [Bool]{
         switch name{
         case 1:
+            shake()
             self.type = .one
             return [false,true,true,true,false,false]
         case 2:
+            flash()
             self.type = .two
             return [true,false,false,false,true,true]
         case 3:
+            pulsate()
             self.type = .three
             return [true,true,false,false,false,false]
         default:

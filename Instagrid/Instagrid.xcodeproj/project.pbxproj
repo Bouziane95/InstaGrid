@@ -16,6 +16,7 @@
 		84C54E4F21B6C7F9009D482B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C54E4D21B6C7F9009D482B /* Main.storyboard */; };
 		84C54E5121B6C7FE009D482B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84C54E5021B6C7FE009D482B /* Assets.xcassets */; };
 		84C54E5421B6C7FE009D482B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C54E5221B6C7FE009D482B /* LaunchScreen.storyboard */; };
+		84DB108A21FF324700C04F0C /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DB108921FF324700C04F0C /* Animations.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,8 +38,6 @@
 
 /* Begin PBXFileReference section */
 		840C7CE821DA4CC0002EBD6E /* Logic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logic.swift; sourceTree = "<group>"; };
-		841DC56421ED012F00BA5850 /* InstagridTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = InstagridTests.xctest; path = "/Users/admin/Desktop/InstaGrid/Instagrid/build/Debug-iphoneos/InstagridTests.xctest"; sourceTree = "<absolute>"; };
-		841DC56521ED012F00BA5850 /* InstagridUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = InstagridUITests.xctest; path = "/Users/admin/Desktop/InstaGrid/Instagrid/build/Debug-iphoneos/InstagridUITests.xctest"; sourceTree = "<absolute>"; };
 		845AF74E21CA907F00D064B4 /* PasteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PasteView.swift; path = ../../PasteView.swift; sourceTree = "<group>"; };
 		8470617C21B82A28002524D3 /* ThirstySoftRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ThirstySoftRegular.otf; sourceTree = "<group>"; };
 		8470617D21B82A28002524D3 /* Delm-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Delm-Medium.otf"; sourceTree = "<group>"; };
@@ -48,6 +47,9 @@
 		84C54E4E21B6C7F9009D482B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		84C54E5021B6C7FE009D482B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84C54E5321B6C7FE009D482B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		84DB108721FF26C500C04F0C /* InstagridTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstagridTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		84DB108821FF26C500C04F0C /* InstagridUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstagridUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		84DB108921FF324700C04F0C /* Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,8 @@
 			isa = PBXGroup;
 			children = (
 				84C54E4621B6C7F9009D482B /* Instagrid.app */,
+				84DB108721FF26C500C04F0C /* InstagridTests.xctest */,
+				84DB108821FF26C500C04F0C /* InstagridUITests.xctest */,
 			);
 			name = Products;
 			path = ..;
@@ -136,6 +140,7 @@
 			children = (
 				84C54E4B21B6C7F9009D482B /* ViewController.swift */,
 				845AF74E21CA907F00D064B4 /* PasteView.swift */,
+				84DB108921FF324700C04F0C /* Animations.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -175,7 +180,7 @@
 			);
 			name = InstagridTests;
 			productName = InstagridTests;
-			productReference = 841DC56421ED012F00BA5850 /* InstagridTests.xctest */;
+			productReference = 84DB108721FF26C500C04F0C /* InstagridTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		84C54E6421B6C7FE009D482B /* InstagridUITests */ = {
@@ -193,7 +198,7 @@
 			);
 			name = InstagridUITests;
 			productName = InstagridUITests;
-			productReference = 841DC56521ED012F00BA5850 /* InstagridUITests.xctest */;
+			productReference = 84DB108821FF26C500C04F0C /* InstagridUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -274,6 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				840C7CE921DA4CC0002EBD6E /* Logic.swift in Sources */,
+				84DB108A21FF324700C04F0C /* Animations.swift in Sources */,
 				845AF74F21CA907F00D064B4 /* PasteView.swift in Sources */,
 				84C54E4C21B6C7F9009D482B /* ViewController.swift in Sources */,
 				84C54E4A21B6C7F9009D482B /* AppDelegate.swift in Sources */,

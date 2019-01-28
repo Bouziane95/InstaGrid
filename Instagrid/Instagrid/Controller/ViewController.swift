@@ -73,8 +73,6 @@ class ViewController: UIViewController {
         }
     }
     
-    
-    
     @objc func swipeGesture(sender: UIGestureRecognizer){
         if let swipeGesture = sender as? UISwipeGestureRecognizer
         {
@@ -123,7 +121,6 @@ class ViewController: UIViewController {
         squareThree.isHidden = displays[4]
         squareFour.isHidden = displays[5]
     }
-    
     
     //Access to the photo library for each button and ask the permission of access
     fileprivate func presentPhotoPickerController() {
