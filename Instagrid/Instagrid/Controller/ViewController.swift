@@ -51,6 +51,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Init UI with the layout one and the button one selected
         showLayout(id:1)
         buttonOneHover.isHidden = false
@@ -242,25 +243,14 @@ class ViewController: UIViewController {
     
     //For reset the photos after the share
    private func resetPaste(){
-        self.image1.isHidden = true
-        self.image2.isHidden = true
-        self.image3.isHidden = true
-        self.image4.isHidden = true
-        self.image5.isHidden = true
-        self.image6.isHidden = true
+    
         self.image1.image = nil
         self.image2.image = nil
         self.image3.image = nil
         self.image4.image = nil
         self.image5.image = nil
         self.image6.image = nil
-        self.image1.isHidden = false
-        self.image2.isHidden = false
-        self.image3.isHidden = false
-        self.image4.isHidden = false
-        self.image5.isHidden = false
-        self.image6.isHidden = false
-        
+
         UIView.animate(withDuration: 0.7, delay: 0.5, options: [], animations: {self.paste.transform = .identity})
     }
     
