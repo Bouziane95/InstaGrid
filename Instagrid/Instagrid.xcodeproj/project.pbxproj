@@ -80,9 +80,8 @@
 		8470617921B82843002524D3 /* Instagrid */ = {
 			isa = PBXGroup;
 			children = (
-				847A34D121BEAFAD00AFE477 /* Model */,
 				84C54E4721B6C7F9009D482B /* Products */,
-				84C54E4821B6C7F9009D482B /* Supporting Files */,
+				847A34D121BEAFAD00AFE477 /* Model */,
 				84C54E7C21B6F20A009D482B /* View */,
 				84C54E7D21B6F20E009D482B /* Controller */,
 			);
@@ -101,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				8470617921B82843002524D3 /* Instagrid */,
+				84C54E4821B6C7F9009D482B /* Supporting Files */,
 			);
 			sourceTree = "<group>";
 		};

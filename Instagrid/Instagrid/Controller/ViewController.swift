@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     
     // VARIABLES DECLARATIONS
     
-    //buttons déclarations
+    //buttons declarations
     @IBOutlet weak var layoutOneButton: UIButton!
     @IBOutlet weak var layoutTwoButton: UIButton!
     @IBOutlet weak var layoutThreeButton: UIButton!
@@ -45,10 +45,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var image5: UIImageView!
     @IBOutlet weak var image6: UIImageView!
     
-   
-    
-    //@IBOutlet weak var img: UIImageView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -61,7 +57,7 @@ class ViewController: UIViewController {
         let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(dragPaste(swipe:)))
         swipeUp.direction = UISwipeGestureRecognizer.Direction.up
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(dragPaste(swipe:)))
-        swipeLeft.direction = UISwipeGestureRecognizer.Direction.up
+        swipeLeft.direction = UISwipeGestureRecognizer.Direction.left
         self.view.addGestureRecognizer(swipeUp)
         self.view.addGestureRecognizer(swipeLeft)
         
@@ -211,7 +207,7 @@ class ViewController: UIViewController {
     
     private func share(){
         if  paste.full(){
-            transformPaste()
+            transformLogic()
             saveAndShare()
         } else{
             popAlert(title: "Caution", message: "All the spaces are not filled")
@@ -239,6 +235,19 @@ class ViewController: UIViewController {
     private func transformPaste(){
         let transform = CGAffineTransform(translationX: 0, y: -600)
         UIView.animate(withDuration: 0.3, animations: {self.paste.transform = transform}) {(success) in if success {self.resetPaste()}}
+    }
+    
+    private func transformPasteLeft(){
+        let transform = CGAffineTransform(translationX: -200, y: -600)
+         UIView.animate(withDuration: 0.3, animations: {self.paste.transform = transform}) {(success) in if success {self.resetPaste()}}
+    }
+    
+    private func transformLogic(){
+        if orientation == false{
+            transformPaste()
+        } else{
+            transformPasteLeft()
+        }
     }
     
     //For reset the photos after the share
