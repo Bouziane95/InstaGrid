@@ -42,7 +42,6 @@ extension PasteView{
         
         let fromPoint = CGPoint(x: center.x - 5, y: center.y)
         let fromValue = NSValue(cgPoint: fromPoint)
-        
         let toPoint = CGPoint(x: center.x + 5, y: center.y)
         let toValue = NSValue(cgPoint: toPoint)
         

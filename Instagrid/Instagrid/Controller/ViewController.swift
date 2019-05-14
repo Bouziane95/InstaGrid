@@ -11,8 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     //LOGIC INITIALIZATION
-    
-    let image = UIImagePickerController()
+
     var imagePicked = 0
     var orientation = false
     let logic = Logic()
@@ -168,6 +167,7 @@ class ViewController: UIViewController {
         }
         
     }
+    
     @IBAction func addPhotoS1(_ sender: UIButton) {
         imagePicked = 1
         restrictions()
@@ -215,9 +215,12 @@ class ViewController: UIViewController {
     }
     
     private func saveAndShare(){
-        let imageToSave = logic.convertUiViewToImage(from: paste)
-        let activityC = UIActivityViewController(activityItems: [imageToSave!], applicationActivities: nil)
-        present(activityC, animated: true)
+        if let imageToSave = logic.convertUiViewToImage(from: paste){
+            let activityC = UIActivityViewController(activityItems: [imageToSave], applicationActivities: nil)
+            present(activityC, animated: true)
+        }
+        
+        
     }
     
     @objc private func dragPaste(swipe: UISwipeGestureRecognizer){
