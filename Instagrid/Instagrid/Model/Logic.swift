@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 
-
 class Logic{
     func checkOrientation() -> Bool{
         var landscapeOrientation = false
